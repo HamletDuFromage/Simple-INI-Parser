@@ -133,4 +133,11 @@ namespace simpleIniParser {
             return nullptr;
         }
     }
+
+    void IniSection::deleteOptions(std::string term, bool caseSensitive, IniOptionType type, IniOptionSearchField field) {
+        std::vector<IniOption *> optionsFound = findAllOptions(term, caseSensitive, type, field);
+        std::vector<IniOption *> diff;
+        std::set_difference(options.begin(), options.end(), optionsFound.begin(), optionsFound.end(),std::inserter(diff, diff.begin()));
+        options = diff;
+    }
 }

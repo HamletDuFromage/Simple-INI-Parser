@@ -228,6 +228,16 @@ namespace simpleIniParser {
         return it;
     }
 
+    void Ini::deleteSection(std::string term, bool caseSensitive, IniSectionType type) {
+        auto section = findSection(term, caseSensitive, type);
+        for(size_t i = 0; i < sections.size(); i++) {
+            if(sections[i] == section) {
+                sections.erase(sections.begin() + i);
+            }
+        }
+    }
+
+
     Ini * Ini::_parseContent(std::stringstream * content, std::string magic) {
         Ini * ini = new Ini();
         ini->magic = magic;

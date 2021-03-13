@@ -44,6 +44,7 @@ namespace simpleIniParser {
             std::vector<IniOption *> findAllOptions(std::string term, bool caseSensitive = true, IniOptionType type = IniOptionType::Any, IniOptionSearchField field = IniOptionSearchField::Key);
             std::string build();
             static IniSection * parse(std::string line, bool parseComments);
+            void deleteOptions(std::string term, bool caseSensitive = true, IniOptionType type = IniOptionType::Any, IniOptionSearchField field = IniOptionSearchField::Key);
         
     };
 }

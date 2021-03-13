@@ -43,6 +43,7 @@ namespace simpleIniParser {
             static Ini * parseFile(std::string path);
             static Ini * parseFileWithMagic(std::string path, std::string magic);
             static Ini * parseOrCreateFile(std::string path, std::string magic="");
+            void deleteSection(std::string term, bool caseSensitive = true, IniSectionType type = IniSectionType::Any);
 
         private:
             static Ini * _parseContent(std::stringstream * content, std::string magic);
