@@ -233,6 +233,7 @@ namespace simpleIniParser {
         for(size_t i = 0; i < sections.size(); i++) {
             if(sections[i] == section) {
                 sections.erase(sections.begin() + i);
+                break;
             }
         }
     }
